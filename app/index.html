@@ -2,9 +2,9 @@
 <html lang="en" ng-app="bench">
 <head>
 	<meta charset="UTF-8">
-	<title>Venture Notepad</title>
+	<title>Benchington</title>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="description" content="The best notepad. ever.">
+	<meta name="description" content="The best app. ever.">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <meta name="theme-color" content="#33A357">
 
@@ -18,7 +18,7 @@
         <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
-    <section class="main" layout="row" flex>
+    <section class="main" ui-view>
 
     </section>
 
@@ -52,6 +52,7 @@
     <!-- HOME -->
     <script type="text/javascript" src="angular/components/home/home-module.js"></script>
     <script type="text/javascript" src="angular/components/home/home-controller.js"></script>
+    <script type="text/javascript" src="angular/components/home/home-service.js"></script>
 
 
 

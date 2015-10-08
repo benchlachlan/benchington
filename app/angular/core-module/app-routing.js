@@ -16,12 +16,17 @@ angular
 
     	$stateProvider
     		.state('home', {
-    			url: '/',
-    			template: '<home-route></home-route>',
+    			url: '/:page',
+    			templateUrl: 'components/home/home-template.html',
     			controller: 'HomeCtrl',
-                controllerAs: 'home'
+                controllerAs: 'home',
+                resolve: {
+                    /* @ngInject */
+                    transactions: function($stateParams, homeService) {
+                        return homeService.getTransations($stateParams.page);
+                    }
+                }
     		});
 
-        $urlRouterProvider.otherwise('/');
     }
 })();
