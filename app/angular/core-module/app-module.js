@@ -1,5 +1,12 @@
 (function() {
 
+/**
+* @memberof bench
+* @ngdoc module
+* @name App Module
+* @description
+*   The global module. Declare any dependencies for the application here.
+*/
 angular
     .module('bench', [
         'ui.router',

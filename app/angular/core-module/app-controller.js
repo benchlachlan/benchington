@@ -5,6 +5,14 @@
         .module('bench')
         .controller('AppCtrl', AppCtrl);
 
+    /**
+    * @memberof bench
+    * @ngdoc controller
+    * @name App Controller
+    * @description
+    *   The global controller component. Used for any global scope objects, and other global parameters.
+    */
+
     /* @ngInject */
     function AppCtrl() {
         /*jshint validthis: true */

@@ -5,10 +5,13 @@
         .module('bench.home')
         .controller('HomeCtrl', HomeCtrl);
 
-    /* @ngInject */
-    function HomeCtrl() {
-        /*jshint validthis: true */
-        var vm = this;
-        vm.title = 'HomeCtrl';
+
+    function HomeCtrl(businesses) {
+        var home = this;
+        activate();
+
+        function activate() {
+
+        }
     }
 })();
