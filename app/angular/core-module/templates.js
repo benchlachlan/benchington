@@ -1,0 +1,1 @@
+angular.module("bench.templates", []).run(["$templateCache", function($templateCache) {$templateCache.put("components/home/home-template.html","");}]);
