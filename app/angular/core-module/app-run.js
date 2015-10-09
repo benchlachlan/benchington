@@ -12,8 +12,11 @@ angular
     *   The global run component. Used to configure any code that needs to be
     *   executed between configure and controller init. Great for auth checks.
     */
-    function run() {
-
+    function run($rootScope, $state) {
+        $rootScope.$on('$stateChangeError', function(event) {
+            event.preventDefault();
+            $state.go('404');
+        });
     }
 
 })();

@@ -16,7 +16,7 @@
         </tr>
         <tr ng-repeat="transaction in home.transactions.transactions">
             <td>
-                {{ transaction.Date }}
+                {{ transaction.Date | date:'MMM d, yyyy' }}
             </td>
             <td>
                 {{ transaction.Company | capitalize:'all' }}

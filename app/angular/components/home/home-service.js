@@ -41,8 +41,8 @@
             }
 
             function getTransationsFail(error) {
-                console.error(error.status + " - " + error.data.message);
-                deferred.reject(error.status + " - " + error.data.message);
+                console.error("getTransations FAILED - " + error.status);
+                deferred.reject(error);
             }
 
             return deferred.promise;

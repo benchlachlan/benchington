@@ -26,8 +26,12 @@ angular
                         return homeService.getTransations($stateParams.page);
                     }
                 }
+    		})
+            .state('404', {
+    			url: '/404',
+    			template: '<h3>Uh oh, that\'s a big ol\' 404</h3>',
     		});
 
-        $urlRouterProvider.otherwise('/');
+        $urlRouterProvider.otherwise('/404');
     }
 })();
