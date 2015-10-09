@@ -98,7 +98,7 @@ gulp.task('index', function() {
 
 
 gulp.task('build', function() {
-    runSequence('template','sass');
+    runSequence('template','sass', 'index');
 });
 
 gulp.task('default', [
