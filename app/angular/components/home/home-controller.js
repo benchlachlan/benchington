@@ -23,6 +23,14 @@
 
         function activate() {
             home.transactions = transactions;
+            addTotals();
+        }
+
+        function addTotals() {
+            home.total = 0;
+            for (var i = 0; i < home.transactions.transactions.length; i++) {
+                home.total =+ home.transactions.transactions[i].Amount;
+            }
         }
     }
 })();

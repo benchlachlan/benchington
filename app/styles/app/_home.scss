@@ -1,0 +1,25 @@
+.home {
+    .home-table {
+        width: 100%;
+        text-align: left;
+        td,th {
+            padding: $padding-sm;
+        }
+        th {
+            color: $color-primary;
+            font-size: $h5;
+        }
+        tr {
+            border-top: 1px solid $color-lighter-grey;
+            &:nth-child(2) {
+                background: linear-gradient(to bottom, $color-lighter-grey 0%,$color-white 100%);
+            }
+            &:first-child {
+                border-top: none;
+            }
+            &:hover {
+                color: $color-primary;
+            }
+        }
+    }
+}

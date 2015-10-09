@@ -10,6 +10,7 @@
 angular
     .module('bench', [
         'ui.router',
+        'angular-capitalize-filter',
 
         'bench.templates',
         'bench.config',

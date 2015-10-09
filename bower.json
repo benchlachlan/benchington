@@ -1,5 +1,5 @@
 {
-  "name": "notepad",
+  "name": "benchington",
   "version": "0.0.0",
   "authors": [
     "Jamie Spittal <spittal@kerplunc.com>"
@@ -17,6 +17,7 @@
     "angular": "~1.4.3",
     "angular-ui-router": "~0.2.15",
     "jquery": "~2.1.4",
-    "normalize.css": "~3.0.3"
+    "normalize.css": "~3.0.3",
+    "angular-capitalize-filter": "https://github.com/Puigcerber/angular-capitalize-filter.git#~2.2.1"
   }
 }

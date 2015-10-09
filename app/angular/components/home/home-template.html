@@ -1,1 +1,32 @@
-{{home.transactions}}
+<div class="home">
+    <table class="home-table">
+        <tr>
+            <th>
+                Date
+            </th>
+            <th>
+                Company
+            </th>
+            <th>
+                Account
+            </th>
+            <th>
+                {{ home.total | currency }}
+            </th>
+        </tr>
+        <tr ng-repeat="transaction in home.transactions.transactions">
+            <td>
+                {{ transaction.Date }}
+            </td>
+            <td>
+                {{ transaction.Company | capitalize:'all' }}
+            </td>
+            <td>
+                {{ transaction.Ledger }}
+            </td>
+            <td>
+                {{ transaction.Amount | currency }}
+            </td>
+        </tr>
+    </table>
+</div>
