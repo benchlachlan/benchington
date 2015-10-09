@@ -28,5 +28,6 @@ angular
                 }
     		});
 
+        $urlRouterProvider.otherwise('/');
     }
 })();

@@ -1,4 +1,6 @@
 .home {
+    @include benchDropShadow();
+    background-color: $color-white;
     .home-table {
         width: 100%;
         text-align: left;
@@ -14,11 +16,13 @@
             &:nth-child(2) {
                 background: linear-gradient(to bottom, $color-lighter-grey 0%,$color-white 100%);
             }
-            &:first-child {
-                border-top: none;
-            }
             &:hover {
                 color: $color-primary;
+                cursor: pointer;
+            }
+            &:first-child {
+                border-top: none;
+                cursor: default;
             }
         }
     }

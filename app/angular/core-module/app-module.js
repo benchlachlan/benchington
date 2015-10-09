@@ -11,6 +11,7 @@ angular
     .module('bench', [
         'ui.router',
         'angular-capitalize-filter',
+        'ui.bootstrap',
 
         'bench.templates',
         'bench.config',

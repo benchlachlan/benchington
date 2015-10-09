@@ -25,9 +25,3 @@ body {
     max-width: 1000px;
     padding: 0 $padding-sm;
 }
-
-ui-view {
-    display: block;
-    @include benchDropShadow();
-    background-color: $color-white;
-}
