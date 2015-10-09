@@ -4,4 +4,11 @@ bench-header {
     text-align: center;
     background-color: $color-primary;
     color: $color-white;
+    padding: $padding-md;
+    margin-bottom: $margin-md;
+    h1 {
+        margin: 0;
+        font-size: $h5;
+        font-weight: 100;
+    }
 }

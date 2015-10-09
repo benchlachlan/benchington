@@ -1,1 +1,2 @@
-angular.module("bench.templates", []).run(["$templateCache", function($templateCache) {$templateCache.put("components/home/home-template.html","{{home.transactions}}\n");}]);
+angular.module("bench.templates", []).run(["$templateCache", function($templateCache) {$templateCache.put("components/home/home-template.html","{{home.transactions}}\n");
+$templateCache.put("common/directives/bench-header/bench-header-template.html","<h1>Benchinton, The Best Transations Ever.</h1>\n");}]);

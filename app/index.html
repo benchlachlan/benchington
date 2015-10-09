@@ -9,6 +9,7 @@
     <meta name="theme-color" content="#33A357">
 
     <!-- build:css css/app.css -->
+	<link rel="stylesheet" href="bower_components/normalize.css/normalize.css">
 	<link rel="stylesheet" href="styles/app.css">
 	<!-- endbuild -->
 </head>
@@ -20,7 +21,9 @@
 
     <section class="main">
 		<bench-header></bench-header>
-		<ui-view class="content"></ui-view>
+		<section class="content">
+			<ui-view></ui-view>
+		</section>
     </section>
 
 
@@ -46,7 +49,7 @@
 
     <!-- COMMON DIRECTIVES -->
     <script type="text/javascript" src="angular/common/directives/directive-module.js"></script>
-    <script type="text/javascript" src="angular/common/bench-header/bench-header-directive.js"></script>
+    <script type="text/javascript" src="angular/common/directives/bench-header/bench-header-directive.js"></script>
 
     <!-- COMMON FILTERS -->
     <script type="text/javascript" src="angular/common/filters/filter-module.js"></script>
