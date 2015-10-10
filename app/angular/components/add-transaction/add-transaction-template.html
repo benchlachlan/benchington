@@ -1,0 +1,38 @@
+<h1>Add Transaction</h1>
+<form class="addTransactionForm" name="addTransactionForm" ng-submit="transactionVM.addToLocalStorage()" novalidate>
+    <div class="form-group">
+        <label for="date">Date</label>
+        <input type="date" name="date" class="form-control" ng-model="transactionVM.transaction.Date" required>
+        <div ng-messages="addTransactionForm.date.$error" role="alert">
+            <div ng-message="required">You did not enter a date.</div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="company">Company</label>
+        <input type="text" name="company" class="form-control" ng-minlength="2" ng-model="transactionVM.transaction.Company" placeholder="Title" required>
+        <div ng-messages="addTransactionForm.company.$error" role="alert">
+            <div ng-message="required">You did not enter a company name.</div>
+            <div ng-message="minlength">You company name is too short!</div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="account">Account</label>
+        <input type="text" name="account" class="form-control" ng-minlength="2" ng-model="transactionVM.transaction.Ledger" placeholder="Account" required>
+        <div ng-messages="addTransactionForm.account.$error" role="alert">
+            <div ng-message="required">You did not enter an account name.</div>
+            <div ng-message="minlength">You account name is too short!</div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="amount">Amount</label>
+        <input type="number" name="amount" class="form-control" ng-model="transactionVM.transaction.Amount" placeholder="Amount" required>
+        <div ng-messages="addTransactionForm.account.$error" role="alert">
+            <div ng-message="required">You did not enter an amount.</div>
+        </div>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>

@@ -12,6 +12,7 @@ angular
         'ui.router',
         'angular-capitalize-filter',
         'ui.bootstrap',
+        'ngMessages',
 
         'bench.templates',
         'bench.config',
@@ -21,7 +22,8 @@ angular
         'bench.service',
         'bench.filter',
 
-        'bench.home'
+        'bench.home',
+        'bench.add-transaction'
     ]);
 
 })();

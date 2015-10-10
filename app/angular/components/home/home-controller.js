@@ -11,7 +11,7 @@
     * @name Home Controller
     * @description
     *   A controller for the home route.
-    *   Gets the list of businesses from the resolve which gets injected into this controller as "businesses".
+    *   Gets the list of businesses from the resolve which gets injected into this controller as "transactions".
     *
     *   NOTE TO BENCH: I would like to use directives for everything, but I also want to use the power of resolve.
     *   I found that just making a controller for a route is the best case scenario as all resolves get injected into
