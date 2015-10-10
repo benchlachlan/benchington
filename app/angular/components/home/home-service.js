@@ -39,8 +39,12 @@
             .catch(getTransationsFail);
 
             function getTransationsSuccess(res) {
-                var mergedData = mergeTransactions(res.data, localTransactions);
-                deferred.resolve(mergedData);
+                if (localTransactions !== null) {
+                    var mergedData = mergeTransactions(res.data, localTransactions);
+                    deferred.resolve(mergedData);
+                } else {
+                    deferred.resolve(res.data);
+                }
             }
 
             function getTransationsFail(error) {
