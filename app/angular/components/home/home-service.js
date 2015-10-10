@@ -13,7 +13,7 @@
     *   The necessary methods to abstract away api calls for the home module.
     *   Inject this into directives and controllers to gain access to home API calls
     */
-    function homeService($q, $http) {
+    function homeService($q, $http, addTransactionService) {
         var service = {
             getTransations: getTransations
         };
@@ -28,6 +28,8 @@
         function getTransations(page) {
             var deferred = $q.defer();
 
+            var localTransactions = addTransactionService.getTransactions();
+
             $http({
                 // url: ENV_CONSTANTS.apiUrl.v1 + "/" + page + ".json", // I would usually use an environment var for making api calls, but this is a little small for that.
                 url: "http://resttest.bench.co/transactions/" + page + ".json",
@@ -37,7 +39,8 @@
             .catch(getTransationsFail);
 
             function getTransationsSuccess(res) {
-                deferred.resolve(res.data);
+                var mergedData = mergeTransactions(res.data, localTransactions);
+                deferred.resolve(mergedData);
             }
 
             function getTransationsFail(error) {
@@ -46,6 +49,12 @@
             }
 
             return deferred.promise;
+        }
+
+        function mergeTransactions(apiData, localData) {
+            apiData.totalCount =+ localData.length;
+
+            return apiData.transactions.concat(localData);
         }
     }
 })();

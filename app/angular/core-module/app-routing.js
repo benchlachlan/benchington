@@ -35,7 +35,7 @@
       })
       .state('404', {
         url: '/404',
-        template: '<h3>Uh oh, that\'s a big ol\' 404. <a ui-sref="home({ page: 1 })"">Take me back to safety :(</a></h3>',
+        template: '<h3>Uh oh, that\'s likely a big ol\' 404 or something much, much worse.<br><br> <a ui-sref="home({ page: 1 })"">Take me back to safety :(</a></h3>',
       });
 
     $urlRouterProvider.otherwise('/404');
