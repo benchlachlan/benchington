@@ -28,6 +28,11 @@
             addTotals();
         }
 
+        /**
+         * Add Total Amounts
+         * @memberof homeService
+         * @description adds the total amount of the transactions shown on the page
+         */
         function addTotals() {
             home.total = 0;
             for (var i = 0; i < home.transactions.transactions.length; i++) {
@@ -35,6 +40,12 @@
             }
         }
 
+        /**
+         * Change Page
+         * @memberof homeService
+         * @description changes the route in home to another page.
+         */
+        functi
         function changePage() {
             $state.go('home', { 'page' : home.transactions.page });
         }
