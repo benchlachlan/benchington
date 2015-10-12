@@ -42,12 +42,9 @@
 
             function getTransationsSuccess(res) {
 
-                //Add local data transactions length to the total count
-                res.data.totalCount += localTransactions.length;
-
                 //compute whether or not I should show some local data at the end of a list on a page.
                 var apiDataLength = res.data.transactions.length;
-                if (apiDataLength < 10) {
+                if (apiDataLength < 10 && !!localTransactions) {
                     var getHowManyLocal = 10 - apiDataLength;
                     var mergedData = mergeTransactions(res.data.transactions, localTransactions, getHowManyLocal);
                     deferred.resolve(mergedData);
@@ -69,7 +66,6 @@
             localData.splice(0,howMany);
             apiData = apiData.concat(localData);
 
-
             return apiData;
         }
 
@@ -88,7 +84,11 @@
             .catch(getTransationsFail);
 
             function getTransationsSuccess(res) {
-                deferred.resolve(res.data.totalCount + localTransactions.length);
+                if(!!localTransactions) {
+                    deferred.resolve(res.data.totalCount + localTransactions.length);
+                } else {
+                    deferred.resolve(res.data.totalCount);
+                }
             }
 
             function getTransationsFail(error) {
