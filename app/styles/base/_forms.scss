@@ -1,0 +1,7 @@
+.invalid {
+    border-color: $color-primary-light !important;
+}
+
+.ng-invalid.ng-dirty {
+    border-color: $color-accent;
+}

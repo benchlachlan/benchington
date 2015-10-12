@@ -1,5 +1,5 @@
 node_modules
 app/bower_components
 app/styles/app.css
-app/angular/core-module/template.js
+app/angular/core-module/templates.js
 dist

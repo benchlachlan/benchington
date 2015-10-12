@@ -13,7 +13,8 @@ angular
     *   executed between configure and controller init. Great for auth checks.
     */
     function run($rootScope, $state) {
-        $rootScope.$on('$stateChangeError', function(event) {
+        $rootScope.$on('$stateChangeError', function(event, fromState, fromParams, toState, toParams, error) {
+            console.log(error);
             event.preventDefault();
             $state.go('404');
         });

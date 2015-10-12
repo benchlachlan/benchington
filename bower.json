@@ -19,6 +19,7 @@
     "jquery": "~2.1.4",
     "angular-capitalize-filter": "https://github.com/Puigcerber/angular-capitalize-filter.git#~2.2.1",
     "bootstrap-sass": "~3.3.5",
-    "angular-bootstrap": "~0.14.0"
+    "angular-bootstrap": "~0.14.0",
+    "angular-messages": "^1.4.7"
   }
 }

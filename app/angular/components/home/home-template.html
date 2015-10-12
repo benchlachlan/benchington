@@ -1,4 +1,4 @@
-<div class="home">
+<div class="home-table-wrap">
     <table class="home-table">
         <tr>
             <th>
@@ -31,4 +31,11 @@
     </table>
 </div>
 
-<uib-pagination total-items="home.transactions.totalCount" ng-model="home.transactions.page" ng-change="home.changePage()"></uib-pagination>
+<p class="total-transactions">
+    Total transactions: {{ home.transactions.totalCount }}
+</p>
+
+<div class="pagination-and-add">
+    <uib-pagination class="pull-left" total-items="home.transactions.totalCount" ng-model="home.transactions.page" ng-change="home.changePage()"></uib-pagination>
+    <a ui-sref="add-transaction" class="btn btn-primary pull-right">Add Transaction</a>
+</div>
