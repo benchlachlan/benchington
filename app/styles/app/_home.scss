@@ -1,4 +1,4 @@
-.home {
+.home-table-wrap {
     @include benchDropShadow();
     background-color: $color-white;
     .home-table {
@@ -34,5 +34,13 @@
                 cursor: default;
             }
         }
+    }
+}
+.total-transactions {
+    text-align: right;
+}
+.pagination-and-add {
+    .pagination {
+        margin: 0;
     }
 }
