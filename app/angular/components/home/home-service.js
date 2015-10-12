@@ -63,7 +63,10 @@
 
         function mergeTransactions(apiData,localData) {
             var howMany = arguments[2] || 0;
-            localData.splice(0,howMany);
+
+            if(localData.length > howMany) {
+                localData.splice(0,howMany);
+            }
             apiData = apiData.concat(localData);
 
             return apiData;

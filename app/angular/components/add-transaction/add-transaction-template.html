@@ -29,7 +29,7 @@
     <div class="form-group">
         <label for="amount">Amount</label>
         <input type="number" name="amount" class="form-control" ng-model="transactionVM.transaction.Amount" placeholder="Amount" required>
-        <div ng-messages="addTransactionForm.account.$error" role="alert">
+        <div ng-messages="addTransactionForm.amount.$error" role="alert">
             <div ng-message="required">You did not enter an amount.</div>
         </div>
     </div>
