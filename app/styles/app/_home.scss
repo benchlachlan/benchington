@@ -4,6 +4,13 @@
     .home-table {
         width: 100%;
         text-align: left;
+        .date,.account {
+            color: #999;
+            font-size: $h6;
+        }
+        .company,.amount {
+            font-weight: 600;
+        }
         td,th {
             padding: $padding-sm;
         }
@@ -18,7 +25,9 @@
             }
             &:hover {
                 color: $color-primary;
-                cursor: pointer;
+                .date,.account {
+                    color: $color-primary;
+                }
             }
             &:first-child {
                 border-top: none;

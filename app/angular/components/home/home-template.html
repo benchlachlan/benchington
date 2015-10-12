@@ -15,16 +15,16 @@
             </th>
         </tr>
         <tr ng-repeat="transaction in home.transactions.transactions">
-            <td>
+            <td class="date">
                 {{ transaction.Date | date:'MMM d, yyyy' }}
             </td>
-            <td>
+            <td class="company">
                 {{ transaction.Company | capitalize:'all' }}
             </td>
-            <td>
+            <td class="account">
                 {{ transaction.Ledger }}
             </td>
-            <td>
+            <td class="amount">
                 {{ transaction.Amount | currency }}
             </td>
         </tr>

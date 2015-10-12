@@ -102,6 +102,7 @@ gulp.task('build', function() {
 });
 
 gulp.task('default', [
-  'build',
+  'template',
+  'sass',
   'serve'
 ]);
