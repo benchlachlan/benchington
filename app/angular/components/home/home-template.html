@@ -14,7 +14,7 @@
                 {{ home.total | currency }}
             </th>
         </tr>
-        <tr ng-repeat="transaction in home.transactions.transactions">
+        <tr ng-repeat="transaction in home.transactions">
             <td>
                 {{ transaction.Date | date:'MMM d, yyyy' }}
             </td>
@@ -32,10 +32,10 @@
 </div>
 
 <p class="total-transactions">
-    Total transactions: {{ home.transactions.totalCount }}
+    Total transactions: {{ home.totalCount }}
 </p>
 
 <div class="pagination-and-add">
-    <uib-pagination class="pull-left" total-items="home.transactions.totalCount" ng-model="home.transactions.page" ng-change="home.changePage()"></uib-pagination>
+    <uib-pagination class="pull-left" total-items="home.totalCount" ng-model="home.page" ng-change="home.changePage()"></uib-pagination>
     <a ui-sref="add-transaction" class="btn btn-primary pull-right">Add Transaction</a>
 </div>

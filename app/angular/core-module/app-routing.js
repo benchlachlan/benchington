@@ -21,10 +21,12 @@
         controller: 'HomeCtrl',
         controllerAs: 'home',
         resolve: {
-          /* @ngInject */
-          transactions: function($stateParams, homeService) {
-            return homeService.getTransations($stateParams.page);
-          }
+            transactions: function($stateParams, homeService) {
+                return homeService.getTransations($stateParams.page);
+            },
+            totalCount: function(homeService) {
+                return homeService.getTotalCount();
+            }
         }
       })
       .state('add-transaction', {

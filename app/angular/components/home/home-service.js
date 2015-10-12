@@ -15,7 +15,8 @@
     */
     function homeService($q, $http, addTransactionService) {
         var service = {
-            getTransations: getTransations
+            getTransations: getTransations,
+            getTotalCount: getTotalCount
         };
 
         return service;
@@ -46,12 +47,12 @@
 
                 //compute whether or not I should show some local data at the end of a list on a page.
                 var apiDataLength = res.data.transactions.length;
-                if (apiDataLength <= 10) {
+                if (apiDataLength < 10) {
                     var getHowManyLocal = 10 - apiDataLength;
-                    var mergedData = mergeTransactions(res.data, localTransactions, getHowManyLocal);
+                    var mergedData = mergeTransactions(res.data.transactions, localTransactions, getHowManyLocal);
                     deferred.resolve(mergedData);
                 } else {
-                    deferred.resolve(res.data);
+                    deferred.resolve(res.data.transactions);
                 }
             }
 
@@ -63,15 +64,38 @@
             return deferred.promise;
         }
 
-
-
         function mergeTransactions(apiData,localData) {
             var howMany = arguments[2] || 0;
             localData.splice(0,howMany);
-            apiData.transactions = apiData.transactions.concat(localData);
+            apiData = apiData.concat(localData);
 
 
             return apiData;
+        }
+
+        function getTotalCount() {
+            var deferred = $q.defer();
+
+            //get the local transactions
+            var localTransactions = addTransactionService.getTransactions();
+
+            $http({
+                // url: ENV_CONSTANTS.apiUrl.v1 + "/" + page + ".json", // I would usually use an environment var for making api calls, but this is a little small for that.
+                url: "http://resttest.bench.co/transactions/1.json",
+                method: "GET"
+            })
+            .then(getTransationsSuccess)
+            .catch(getTransationsFail);
+
+            function getTransationsSuccess(res) {
+                deferred.resolve(res.data.totalCount + localTransactions.length);
+            }
+
+            function getTransationsFail(error) {
+                deferred.reject(error);
+            }
+
+            return deferred.promise;
         }
     }
 })();

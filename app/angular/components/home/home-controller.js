@@ -17,7 +17,7 @@
     *   I found that just making a controller for a route is the best case scenario as all resolves get injected into
     *   the contoller. Making the resolve inject directly into a directive is a little messy, so I didn't do it.
     */
-    function HomeCtrl(transactions, $state) {
+    function HomeCtrl(transactions, totalCount, $state, $stateParams) {
         var home = this;
         activate();
 
@@ -25,18 +25,20 @@
 
         function activate() {
             home.transactions = transactions;
+            home.totalCount = totalCount;
+            home.page = $stateParams.page;
             addTotals();
         }
 
         function addTotals() {
             home.total = 0;
-            for (var i = 0; i < home.transactions.transactions.length; i++) {
-                home.total =+ home.transactions.transactions[i].Amount;
+            for (var i = 0; i < home.transactions.length; i++) {
+                home.total =+ home.transactions[i].Amount;
             }
         }
 
         function changePage() {
-            $state.go('home', { 'page' : home.transactions.page });
+            $state.go('home', { 'page' : home.page });
         }
     }
 })();
