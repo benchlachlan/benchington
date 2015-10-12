@@ -21,6 +21,11 @@
 
         return service;
 
+        /**
+         * Add Transaction
+         * @memberof homeService
+         * @param {Transaction (not really a thing)} the transaction to add
+         */
         function addTransaction(transaction) {
             var transactionArray = $window.localStorage.getItem('transactions');
 
@@ -34,6 +39,10 @@
             $window.localStorage.setItem('transactions', JSON.stringify(transactionArray));
         }
 
+        /**
+         * Get Local Transactions
+         * @memberof homeService
+         */
         function getTransactions() {
             var transactionArray = $window.localStorage.getItem('transactions');
 

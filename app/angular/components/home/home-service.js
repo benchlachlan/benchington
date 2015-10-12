@@ -61,6 +61,12 @@
             return deferred.promise;
         }
 
+        /**
+         * Merge Transactions
+         * @memberof homeService
+         * @param {array} the data that comes from the api
+         * @param {array} the data that comes from the local-storage
+         */
         function mergeTransactions(apiData,localData) {
             var howMany = arguments[2] || 0;
 
@@ -72,6 +78,11 @@
             return apiData;
         }
 
+        /**
+         * Get The Total Count of Transactions
+         * @memberof homeService
+         */
+        func
         function getTotalCount() {
             var deferred = $q.defer();
 
