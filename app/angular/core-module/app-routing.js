@@ -16,7 +16,7 @@ angular
 
     	$stateProvider
     		.state('home', {
-    			url: '/:page',
+    			url: '/home/:page',
     			templateUrl: 'components/home/home-template.html',
     			controller: 'HomeCtrl',
                 controllerAs: 'home',
@@ -32,6 +32,6 @@ angular
     			template: '<h3>Uh oh, that\'s a big ol\' 404. <a ui-sref="home({ page: 1 })"">Take me back to safety :(</a></h3>',
     		});
 
-        $urlRouterProvider.otherwise('/404');
+        $urlRouterProvider.otherwise('/home/1');
     }
 })();
